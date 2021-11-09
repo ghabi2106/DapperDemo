@@ -32,13 +32,10 @@ namespace DapperDemo.Migrations
                 CREATE PROC usp_AddCategory
                     @CategoryId int OUTPUT,
                     @Name varchar(MAX),
-	                @Address  varchar(MAX),
-	                @City varchar(MAX),
-	                @State varchar(MAX),
-	                @PostalCode varchar(MAX)
+	                @Description  varchar(MAX)
                 AS
                 BEGIN 
-                    INSERT INTO Categories (Name, Address, City, State, PostalCode) VALUES(@Name, @Address, @City, @State, @PostalCode);
+                    INSERT INTO Categories (Name, Description) VALUES(@Name, @Description);
 	                SELECT @CategoryId = SCOPE_IDENTITY();
                 END
                 GO
@@ -48,19 +45,13 @@ namespace DapperDemo.Migrations
                 CREATE PROC usp_UpdateCategory
 	                @CategoryId int,
                     @Name varchar(MAX),
-	                @Address  varchar(MAX),
-	                @City varchar(MAX),
-	                @State varchar(MAX),
-	                @PostalCode varchar(MAX)
+	                @Description  varchar(MAX)
                 AS
                 BEGIN 
                     UPDATE Categories  
 	                SET 
 		                Name = @Name, 
-		                Address = @Address,
-		                City=@City, 
-		                State=@State, 
-		                PostalCode=@PostalCode
+		                Description = @Description
 	                WHERE CategoryId=@CategoryId;
 	                SELECT @CategoryId = SCOPE_IDENTITY();
                 END

@@ -23,7 +23,7 @@ namespace DapperDemo.Repository
 
         public Book Add(Book book)
         {
-            var sql = "INSERT INTO Books (Name, Title, Email, Phone, CategoryId) VALUES(@Name, @Title, @Email, @Phone, @CategoryId);"
+            var sql = "INSERT INTO Books (Title, Publisher, CategoryId) VALUES(@Title, @Publisher, @CategoryId);"
                         +"SELECT CAST(SCOPE_IDENTITY() as int); ";
             var id = db.Query<int>(sql, book).Single();
             book.BookId = id;
@@ -32,7 +32,7 @@ namespace DapperDemo.Repository
 
         public async Task<Book> AddAsync(Book book)
         {
-            var sql = "INSERT INTO Books (Name, Title, Email, Phone, CategoryId) VALUES(@Name, @Title, @Email, @Phone, @CategoryId);"
+            var sql = "INSERT INTO Books (Title, Publisher, CategoryId) VALUES(@Title, @Publisher, @CategoryId);"
                         + "SELECT CAST(SCOPE_IDENTITY() as int); ";
             var id = await db.QueryAsync<int>(sql, book);
             book.BookId = id.Single();
@@ -59,7 +59,7 @@ namespace DapperDemo.Repository
 
         public Book Update(Book book)
         {
-            var sql = "UPDATE Books SET Name = @Name, Title = @Title, Email = @Email, Phone = @Phone, CategoryId = @CategoryId WHERE BookId = @BookId";
+            var sql = "UPDATE Books SET Title = @Title, Publisher = @Publisher, CategoryId = @CategoryId WHERE BookId = @BookId";
             db.Execute(sql, book);
             return book;
         }

@@ -33,27 +33,20 @@ namespace DapperDemo.Controllers
             Category category = new Category()
             {
                 Name = "Test" + Guid.NewGuid().ToString(),
-                Address = "test address",
-                City = "test city",
-                PostalCode = "test postalCode",
-                State = "test state",
+                Description = "test description",
                 Books = new List<Book>()
             };
 
             category.Books.Add(new Book()
             {
-                Email = "test Email",
-                Name = "Test Name " + Guid.NewGuid().ToString(),
-                Phone = " test phone",
-                Title = "Test Manager"
+                Title = "test book 1",
+                Publisher = "Test Publisher 1" + Guid.NewGuid().ToString()
             });
 
             category.Books.Add(new Book()
             {
-                Email = "test Email 2",
-                Name = "Test Name 2" + Guid.NewGuid().ToString(),
-                Phone = " test phone 2",
-                Title = "Test Manager 2"
+                Title = "test book 2",
+                Publisher = "Test Publisher 2" + Guid.NewGuid().ToString()
             });
             _bonusRepository.AddTestCategoryWithBooksWithTransaction(category);
             return RedirectToAction(nameof(Index));

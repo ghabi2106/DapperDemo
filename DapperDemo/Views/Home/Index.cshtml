@@ -17,16 +17,10 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => comp.Books.FirstOrDefault().Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => comp.Books.FirstOrDefault().Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => comp.Books.FirstOrDefault().Phone)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => comp.Books.FirstOrDefault().Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => comp.Books.FirstOrDefault().Publisher)
                 </th>
                 <th></th>
             </tr>
@@ -36,16 +30,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Phone)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Publisher)
                     </td>
                 </tr>
             }

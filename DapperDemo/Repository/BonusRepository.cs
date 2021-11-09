@@ -23,7 +23,7 @@ namespace DapperDemo.Repository
 
         public void AddTestCategoryWithBooks(Category objComp)
         {
-            var sql = "INSERT INTO Categories (Name, Address, City, State, PostalCode) VALUES(@Name, @Address, @City, @State, @PostalCode);"
+            var sql = "INSERT INTO Categories (Name, Description) VALUES(@Name, @Description);"
                      + "SELECT CAST(SCOPE_IDENTITY() as int); ";
             var id = db.Query<int>(sql, objComp).Single();
             objComp.CategoryId = id;
@@ -31,13 +31,13 @@ namespace DapperDemo.Repository
             //foreach(var book in objComp.Books)
             //{
             //    book.CategoryId = objComp.CategoryId;
-            //    var sql1 = "INSERT INTO Books (Name, Title, Email, Phone, CategoryId) VALUES(@Name, @Title, @Email, @Phone, @CategoryId);"
+            //    var sql1 = "INSERT INTO Books (Title, Publisher, CategoryId) VALUES(@Title, @Publisher, @CategoryId);"
             //           + "SELECT CAST(SCOPE_IDENTITY() as int); ";
             //    db.Query<int>(sql1, book).Single();
             //}
 
             objComp.Books.Select(c => { c.CategoryId = id; return c; }).ToList();
-              var sqlEmp = "INSERT INTO Books (Name, Title, Email, Phone, CategoryId) VALUES(@Name, @Title, @Email, @Phone, @CategoryId);"
+              var sqlEmp = "INSERT INTO Books (Title, Publisher, CategoryId) VALUES(@Title, @Publisher, @CategoryId);"
                        + "SELECT CAST(SCOPE_IDENTITY() as int); ";
 
             db.Execute(sqlEmp, objComp.Books);
@@ -49,13 +49,13 @@ namespace DapperDemo.Repository
             {
                 try
                 {
-                    var sql = "INSERT INTO Categories (Name, Address, City, State, PostalCode) VALUES(@Name, @Address, @City, @State, @PostalCode);"
+                    var sql = "INSERT INTO Categories (Title, Publisher) VALUES(@Title, @Publisher);"
                  + "SELECT CAST(SCOPE_IDENTITY() as int); ";
                     var id = db.Query<int>(sql, objComp).Single();
                     objComp.CategoryId = id;
 
                     objComp.Books.Select(c => { c.CategoryId = id; return c; }).ToList();
-                    var sqlEmp = "INSERT INTO Books (Name, Title, Email, Phone, CategoryId) VALUES(@Name, @Title, @Email, @Phone, @CategoryId);"
+                    var sqlEmp = "INSERT INTO Books (Title, Publisher, CategoryId) VALUES(@Title, @Publisher, @CategoryId);"
                              + "SELECT CAST(SCOPE_IDENTITY() as int); ";
                     db.Execute(sqlEmp, objComp.Books);
 

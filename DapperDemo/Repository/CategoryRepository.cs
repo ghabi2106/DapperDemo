@@ -23,7 +23,7 @@ namespace DapperDemo.Repository
 
         public Category Add(Category category)
         {
-            var sql = "INSERT INTO Categories (Name, Address, City, State, PostalCode) VALUES(@Name, @Address, @City, @State, @PostalCode);"
+            var sql = "INSERT INTO Categories (Name, Description) VALUES(@Name, @Description);"
                         + "SELECT CAST(SCOPE_IDENTITY() as int); ";
             var id = db.Query<int>(sql,category).Single();
             category.CategoryId = id;
@@ -51,8 +51,7 @@ namespace DapperDemo.Repository
 
         public Category Update(Category category)
         {
-            var sql = "UPDATE Categories SET Name = @Name, Address = @Address, City = @City, " +
-                "State = @State, PostalCode = @PostalCode WHERE CategoryId = @CategoryId";
+            var sql = "UPDATE Categories SET Name = @Name, Description = @Description WHERE CategoryId = @CategoryId";
             db.Execute(sql, category);
             return category;
         }

@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace DapperDemo.Repository
 {
-    public class CategorRepositorySP : ICategoryRepository
+    public class CategoryRepositorySP : ICategoryRepository
     {
         private IDbConnection db;
 
-        public CategorRepositorySP(IConfiguration configuration)
+        public CategoryRepositorySP(IConfiguration configuration)
         {
             this.db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
         }
@@ -26,10 +26,7 @@ namespace DapperDemo.Repository
             var parameters = new DynamicParameters();
             parameters.Add("@CategoryId", 0, DbType.Int32, direction: ParameterDirection.Output);
             parameters.Add("@Name", category.Name);
-            parameters.Add("@Address", category.Address);
-            parameters.Add("@City", category.City);
-            parameters.Add("@State", category.State);
-            parameters.Add("@PostalCode", category.PostalCode);
+            parameters.Add("@Description", category.Description);
             this.db.Execute("usp_AddCategory", parameters, commandType: CommandType.StoredProcedure);
             category.CategoryId = parameters.Get<int>("CategoryId");
 
@@ -57,10 +54,7 @@ namespace DapperDemo.Repository
             var parameters = new DynamicParameters();
             parameters.Add("@CategoryId", category.CategoryId, DbType.Int32);
             parameters.Add("@Name", category.Name);
-            parameters.Add("@Address", category.Address);
-            parameters.Add("@City", category.City);
-            parameters.Add("@State", category.State);
-            parameters.Add("@PostalCode", category.PostalCode);
+            parameters.Add("@Description", category.Description);
             this.db.Execute("usp_UpdateCategory", parameters, commandType: CommandType.StoredProcedure);
            
             return category;
