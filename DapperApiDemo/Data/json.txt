@@ -1,0 +1,101 @@
+{
+  "name": "category 1",
+  "description": "category 1",
+  "books": [
+    {
+      "title": "book 1",
+      "publisher": "book 1"
+    },
+    {
+      "title": "book 2",
+      "publisher": "book 2"
+    }
+  ]
+}
+
+
+[
+{
+  "name": "category 4",
+  "description": "category 4",
+  "books": [
+    {
+      "title": "book 4",
+      "publisher": "book 4"
+    },
+    {
+      "title": "book 44",
+      "publisher": "book 44"
+    }
+  ]
+},
+{
+  "name": "category 5",
+  "description": "category 5",
+  "books": [
+    {
+      "title": "book 5",
+      "publisher": "book 5"
+    },
+    {
+      "title": "book 55",
+      "publisher": "book 55"
+    }
+  ]
+}
+]
+
+
+
+{
+  "categoryId": 19,
+  "name": "19",
+  "description": "19",
+  "books": [
+    {
+      "bookId": 17,
+      "title": "17,
+      "publisher": "17"
+    },
+    {
+      "title": "0000",
+      "publisher": "0000"
+    }
+  ]
+}
+
+
+
+
+[
+{
+  "categoryId": 19,
+  "name": "cat 19",
+  "description": "cat 19",
+  "books": [
+    {
+      "bookId": 17,
+      "title": "book 17",
+      "publisher": "book 17"
+    },
+    {
+      "title": "0000",
+      "publisher": "0000"
+    }
+  ]
+},
+{
+  "name": "category 88",
+  "description": "category 88",
+  "books": [
+    {
+      "title": "book 88",
+      "publisher": "book 88"
+    },
+    {
+      "title": "book 99",
+      "publisher": "book 99"
+    }
+  ]
+}
+]

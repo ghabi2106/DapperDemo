@@ -37,6 +37,7 @@ namespace DapperApiDemo
             services.AddScoped<IBonusRepository, BonusRepository>();
             services.AddScoped<IDapperSprocRepo, DapperSprocRepo>();
             services.AddScoped<ICategoryPlusRepository, CategoryRepositoryPlus>();
+            services.AddScoped<ICategoryTransactionRepository, CategoryTransactionRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
