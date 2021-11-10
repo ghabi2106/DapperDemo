@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DapperApiDemo.Repository
 {
-    public class CategoryRepositoryEF : ICategoryRepository
+    public class CategoryEFRepository : ICategoryRepository
     {
         private readonly ApplicationDbContext _db;
 
-        public CategoryRepositoryEF(ApplicationDbContext db)
+        public CategoryEFRepository(ApplicationDbContext db)
         {
             _db = db;
         }

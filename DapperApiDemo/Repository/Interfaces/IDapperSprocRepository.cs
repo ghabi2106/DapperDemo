@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DapperApiDemo.Repository.Interfaces
 {
-    public interface IDapperSprocRepo
+    public interface IDapperSprocRepository
     {
         string ConnectionString { get; set; }
 

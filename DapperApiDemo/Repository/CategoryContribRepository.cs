@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace DapperApiDemo.Repository
 {
-    public class CategoryRepositoryContib : ICategoryRepository
+    public class CategoryContribRepository : ICategoryRepository
     {
         private IDbConnection db;
 
-        public CategoryRepositoryContib(IConfiguration configuration)
+        public CategoryContribRepository(IConfiguration configuration)
         {
             this.db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
         }

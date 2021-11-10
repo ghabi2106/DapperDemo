@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace DapperApiDemo.Repository
 {
-    public class DapperSprocRepo : IDapperSprocRepo
+    public class DapperSprocRepository : IDapperSprocRepository
     {
 
         private IConfiguration _configuration { get; set; }
 
-        public DapperSprocRepo(IConfiguration configuration)
+        public DapperSprocRepository(IConfiguration configuration)
         {
             _configuration = configuration;
             ConnectionString = _configuration.GetConnectionString("DefaultConnection");

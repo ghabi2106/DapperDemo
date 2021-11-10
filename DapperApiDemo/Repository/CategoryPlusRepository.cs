@@ -14,11 +14,11 @@ using Z.Dapper.Plus;
 
 namespace DapperApiDemo.Repository
 {
-    public class CategoryRepositoryPlus : ICategoryPlusRepository
+    public class CategoryPlusRepository : ICategoryPlusRepository
     {
         private readonly IDbConnection db;
 
-        public CategoryRepositoryPlus(IConfiguration configuration)
+        public CategoryPlusRepository(IConfiguration configuration)
         {
             this.db = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
         }
