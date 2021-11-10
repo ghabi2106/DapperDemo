@@ -103,5 +103,31 @@ namespace DapperApiDemo.Controllers
             return true;
         }
         #endregion
+
+        #region Merge
+        [HttpPost("MergeCategory")]
+        public Category MergeCategory(Category category)
+        {
+            return _categoryPlusRepository.MergeCategory(category);
+        }
+
+        [HttpPost("MergeCategories")]
+        public List<Category> MergeCategories(List<Category> categories)
+        {
+            return _categoryPlusRepository.MergeCategories(categories);
+        }
+
+        [HttpPost("MergeCategoryWithBooks")]
+        public Category MergeCategoryWithBooks(Category category)
+        {
+            return _categoryPlusRepository.MergeCategoryWithBooks(category);
+        }
+
+        [HttpPost("MergeCategoriesWithBooks")]
+        public List<Category> MergeCategoriesWithBooks(List<Category> categories)
+        {
+            return _categoryPlusRepository.MergeCategoriesWithBooks(categories);
+        }
+        #endregion
     }
 }

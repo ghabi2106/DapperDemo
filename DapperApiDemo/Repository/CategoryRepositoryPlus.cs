@@ -150,19 +150,17 @@ namespace DapperApiDemo.Repository
         }
         public Category MergeCategoryWithBooks(Category category)
         {
-            DapperPlusManager.Entity<Category>().Table("Categories").Identity(x => x.CategoryId);
+            DapperPlusManager.Entity<Category>().Table("Categories").Identity(x => x.CategoryId, true);
             DapperPlusManager.Entity<Book>().Table("Books").Identity(x => x.BookId);
-            DapperPlusManager.Entity<Category>().Table("Categories");
-            db.BulkMerge(category);
+            db.BulkMerge(category, category => category.Books);
             return category;
         }
 
         public List<Category> MergeCategoriesWithBooks(List<Category> categories)
         {
-            DapperPlusManager.Entity<Category>().Table("Categories").Identity(x => x.CategoryId);
+            DapperPlusManager.Entity<Category>().Table("Categories").Identity(x => x.CategoryId, true);
             DapperPlusManager.Entity<Book>().Table("Books").Identity(x => x.BookId);
-            DapperPlusManager.Entity<Category>().Table("Categories");
-            db.BulkMerge(categories);
+            db.BulkMerge(categories, category => category.Books);
             return categories;
         }
         #endregion
