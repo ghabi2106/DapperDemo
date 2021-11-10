@@ -8,13 +8,43 @@ namespace DapperApiDemo.Repository.Interfaces
 {
     public interface ICategoryPlusRepository
     {
-        Category Find(int id);
-        List<Category> GetAll();
+        #region Insert
+        Category AddCategory(Category category);
 
-        Category AddBulk(Category category);
-        Category UpdateBulk(Category category);
+        List<Category> AddCategories(List<Category> categories);
 
-        void RemoveBulk(int id);
+        Category AddCategoryWithBooks(Category category);
+
+        List<Category> AddCategoriesWithBooks(List<Category> categories);
+        #endregion
+
+        #region delete
+        void RemoveCategory(int id);
+
+        void RemoveCategories(List<int> id);
+
+        void RemoveCategoryWithBooks(int id);
+
+        void RemoveCategoriesWithBooks(List<int> id);
+        #endregion
+
+        #region Update
+        Category UpdateCategory(Category category);
+
+        List<Category> UpdateCategories(List<Category> categories);
+        Category UpdateCategoryWithBooks(Category category);
+
+        List<Category> UpdateCategoriesWithBooks(List<Category> categories);
+        #endregion
+
+        #region Merge
+        Category MergeCategory(Category category);
+
+        List<Category> MergeCategories(List<Category> categories);
+        Category MergeCategoryWithBooks(Category category);
+
+        List<Category> MergeCategoriesWithBooks(List<Category> categories);
+        #endregion
 
     }
 }

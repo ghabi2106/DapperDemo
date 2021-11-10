@@ -32,10 +32,11 @@ namespace DapperApiDemo
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<ICategoryRepository, CategoryRepositoryContrib>();
+            services.AddScoped<ICategoryRepository, CategoryRepositoryContib>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IBonusRepository, BonusRepository>();
             services.AddScoped<IDapperSprocRepo, DapperSprocRepo>();
+            services.AddScoped<ICategoryPlusRepository, CategoryRepositoryPlus>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
