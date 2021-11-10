@@ -11,12 +11,12 @@ namespace DapperApiDemo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Categories1Controller : ControllerBase
+    public class CategoriesPlusController : ControllerBase
     {
-        private readonly ILogger<Categories1Controller> _logger;
+        private readonly ILogger<CategoriesPlusController> _logger;
         private readonly ICategoryPlusRepository _categoryPlusRepository;
 
-        public Categories1Controller(ILogger<Categories1Controller> logger, ICategoryPlusRepository categoryPlusRepository)
+        public CategoriesPlusController(ILogger<CategoriesPlusController> logger, ICategoryPlusRepository categoryPlusRepository)
         {
             _categoryPlusRepository = categoryPlusRepository;
             _logger = logger;
