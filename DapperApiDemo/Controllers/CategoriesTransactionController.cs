@@ -34,6 +34,12 @@ namespace DapperApiDemo.Controllers
         {
             return _categoryTransactionRepository.AddCategories(categories);
         }
+
+        [HttpPost("CreateCategoryUsingDapper")]
+        public Category CreateCategoryUsingDapper(Category category)
+        {
+            return _categoryTransactionRepository.AddCategoryUsingDapper(category);
+        }
         #endregion
     }
 }

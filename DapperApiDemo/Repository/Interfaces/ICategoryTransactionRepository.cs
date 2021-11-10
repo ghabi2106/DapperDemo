@@ -12,6 +12,8 @@ namespace DapperApiDemo.Repository.Interfaces
         Category AddCategory(Category category);
 
         List<Category> AddCategories(List<Category> categories);
+
+        Category AddCategoryUsingDapper(Category category);
         #endregion
 
     }
