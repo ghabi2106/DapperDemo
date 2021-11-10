@@ -17,4 +17,8 @@
     <PackageReference Include="Z.Dapper.Plus" Version="4.0.18" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repository\BooksAuthors\" />
+  </ItemGroup>
+
 </Project>
