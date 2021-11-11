@@ -119,8 +119,7 @@ namespace DapperApiDemo.Repository
         {
             DapperPlusManager.Entity<Category>().Table("Categories").Identity(x => x.CategoryId);
             DapperPlusManager.Entity<Book>().Table("Books").Identity(x => x.BookId);
-            DapperPlusManager.Entity<Category>().Table("Categories");
-            db.BulkUpdate(category);
+            db.BulkUpdate(category, x => x.Books);
             return category;
         }
 
@@ -128,8 +127,7 @@ namespace DapperApiDemo.Repository
         {
             DapperPlusManager.Entity<Category>().Table("Categories").Identity(x => x.CategoryId);
             DapperPlusManager.Entity<Book>().Table("Books").Identity(x => x.BookId);
-            DapperPlusManager.Entity<Category>().Table("Categories");
-            db.BulkUpdate(categories);
+            db.BulkUpdate(categories, x => x.Books);
             return categories;
         }
         #endregion
