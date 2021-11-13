@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\BooksAuthors\" />
+    <Folder Include="Repository\Advanced\" />
+    <Folder Include="Repository\Interfaces\Advanced\" />
   </ItemGroup>
 
 </Project>
