@@ -14,7 +14,6 @@ namespace DapperApiDemo.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Title { get; set; }
-        [Write(false)]
         public List<Junction> Junctions { get; set; }
     }
 }

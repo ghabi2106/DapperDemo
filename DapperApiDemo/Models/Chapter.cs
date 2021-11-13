@@ -13,8 +13,8 @@ namespace DapperApiDemo.Models
         public string Title { get; set; }
         public int ChapterNumber { get; set; }
         public int BookId { get; set; }
-        public virtual Book Book { get; set; }
         [Write(false)]
+        public virtual Book Book { get; set; }
         public virtual List<Page> Pages { get; set; }
     }
 }
