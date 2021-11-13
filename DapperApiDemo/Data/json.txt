@@ -99,3 +99,62 @@
   ]
 }
 ]
+
+{
+  "categoryId": 22,
+  "name": "category 22",
+  "description": "category 22",
+  "books": [
+    {
+      "bookId": 23,
+      "title": "book 22-0",
+      "publisher": "book 22-0"
+    },
+    {
+"bookId": 24,
+      "title": "book 22-1",
+      "publisher": "book 22-1"
+    }
+  ]
+}
+
+[
+  {
+  "categoryId": 22,
+  "name": "category 22",
+  "description": "category 22",
+  "books": [
+    {
+      "bookId": 25,
+      "title": "book 22-0",
+      "publisher": "book 22-0",
+      "categoryId": 22
+    },
+    {
+"bookId": 26,
+      "title": "book 22-1",
+      "publisher": "book 22-1",
+      "categoryId": 22
+    }
+  ]
+},
+{
+  "categoryId": 23,
+  "name": "category 23",
+  "description": "category 23",
+  "books": [
+    {
+      "bookId": 23,
+      "title": "book 23-0",
+      "publisher": "book 23-0",
+      "categoryId": 23
+    },
+    {
+"bookId": 24,
+      "title": "book 23-1",
+      "publisher": "book 23-1",
+      "categoryId": 23
+    }
+  ]
+}
+]
