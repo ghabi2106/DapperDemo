@@ -12,9 +12,17 @@ namespace DapperApiDemo.Models
         public int BookId { get; set; }
         public string Title { get; set; }
         public string Publisher { get; set; }
+
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+
         [Write(false)]
         public virtual List<Junction> Junctions { get; set; }
+
+        public int CoverId { get; set; }
+        public virtual Cover Cover { get; set; }
+
+        [Write(false)]
+        public virtual List<Chapter> Chapters { get; set; }
     }
 }
